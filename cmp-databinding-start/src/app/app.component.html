@@ -1,0 +1,36 @@
+<div class="container">
+<app-cockpit 
+    (serverCreated)="onServerAdded($event)" 
+    (blueprintCreated)="onBlueprintAdded($event)"
+    ></app-cockpit>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <button class="btn btn-primary" (click)="onChangeFirst()">Change first Element</button>
+      <button class="btn btn-danger" (click)="onDestroyFirst()">Destroy first Component</button>
+      <app-server-element 
+        *ngFor="let serverElement of serverElements"
+        [element]="serverElement"
+        [name]="serverElement.name"
+      >
+        <p #contentParagraph>
+          <strong *ngIf="serverElement.type === 'server'" style="color: red">{{ serverElement.content }}</strong>
+          <em *ngIf="serverElement.type === 'blueprint'" style="color: blue">{{ serverElement.content }}</em>
+        </p>
+      </app-server-element>
+    </div>
+  </div>
+</div>
+<!-- 
+  app-cockpit component has two click evens like (serverCreated)="onServerAdded($event)", here onServerAdded() in app component will be called
+  when serverCreated() in app-cockpit component will be called. this way it will outputs the values from app-cockpit component to app component using $event
+ -->
+ <!-- 
+   vise versa happened in app-server-element, data from app component is sending as property (element) of app-server-element component 
+   which has values in serverElement (of for loop of serverElements )from app components
+  -->
+  <!-- 
+    rather than sending data to child component and using that value with html, directly
+    you can create refrence HTML to that child component
+    *this is part of HOOKS*
+   -->

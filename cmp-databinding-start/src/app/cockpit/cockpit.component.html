@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-xs-12">
+    <p>Add new Servers or blueprints!</p>
+    <label>Server Name</label>
+    <!-- <input type="text" class="form-control" [(ngModel)]="newServerName"> -->
+    <input 
+        type="text" 
+        class="form-control" 
+        #serverNameInput
+        >
+    <label>Server Content</label>
+    <!-- <input type="text" class="form-control" [(ngModel)]="newServerContent"> -->
+    <input 
+        type="text" 
+        class="form-control" 
+        #serverContentInput
+        >
+
+    <br>
+    <button class="btn btn-primary" (click)="onAddServer(serverNameInput)">Add Server</button>
+    <button class="btn btn-primary" (click)="onAddBlueprint(serverNameInput)">Add Server Blueprint</button>
+  </div>
+</div>
+
+<!-- whenever these two buttons will clicked, this function emits value of those inputs to serverCreated Emitter which sends
+  data to app component(parent) via onServerAdded() and this function pushes values to server element list which again
+  send back to server-element component  
+-->
+<!-- 
+  in the first input, rather than sending data using two-way binding, simple local refrence is used to access data of input tag
+  same like (as accessing value of input in react with e.target.value)
+  here we can use the value of this input in onAddedServer(e)=> e.value
+ -->

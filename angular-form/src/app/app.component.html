@@ -1,0 +1,43 @@
+<div class="container">
+
+  <div>
+    <h1>Super Hero Form</h1>
+    <form>
+
+      <div class="form-group">
+        <label for="name">Super Hero Name</label>
+        <input type="text" class="form-control" id="name"
+        required [(ngModel)]="model.name" name="name" #name="ngModel"
+        >
+        <div>
+          {{name.className}}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="weapon">Hero weapon</label>
+        <select class="form-control" id="weapon">
+          <option *ngFor="let wp of weapons" [value]="wp">{{wp}}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="speciality">Speciality</label>
+        <select class="form-control" id="speciality">
+          <option *ngFor="let spec of specialities" [value]="spec">{{spec}}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="realname">Real Name</label>
+        <input type="text" class="form-control" id="realname">
+      </div>
+
+      <button type="submit" class="btn btn-success">Submit</button>
+
+
+    </form>
+  </div>
+
+
+</div>

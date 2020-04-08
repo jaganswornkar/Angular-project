@@ -1,0 +1,18 @@
+<div class="panel panel-default">
+  <!-- <div class="panel-heading">{{ element.name }}</div> -->
+  <div class="panel-heading" #heading >{{ name }}</div>
+  <div class="panel-body">
+    <ng-content></ng-content>
+  </div>
+</div>
+
+
+<!-- 
+  this piece of code is replaced with ng-content which is refrence for this piece of code
+  from the parent user of this component (app component)
+
+  <p>
+    <strong *ngIf="element.type === 'server'" style="color: red">{{ element.content }}</strong>
+    <em *ngIf="element.type === 'blueprint'" style="color: blue">{{ element.content }}</em>
+  </p>
+-->

@@ -1,0 +1,14 @@
+<!-- <input type="text" (input)="commentHandler($event)"> -->
+<input type="text" [(ngModel)]="addComment">
+<!-- <p>{{ addComment }}</p> -->
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">
+    Add Server
+</button>
+<!-- <p [innerText]="allowNewServer"></p> -->
+<!-- <p>{{ serverCreationStatus }}</p> -->
+
+<p *ngIf="serverCreated; else noServer">Server was created and the server name is {{ addComment }}</p>
+<ng-template #noServer>
+    <p>No server was created</p>
+</ng-template>
+<app-server *ngFor="let server of servers"></app-server>
