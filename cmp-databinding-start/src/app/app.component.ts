@@ -10,7 +10,7 @@ export class AppComponent {
   serverElements = [{ name: 'testserver', type: 'server', content: 'just a test' }];
 
   // this function get values from app-cockpit component via (serverCreated)="onServerAdded($event)"
-  // which is passing an event which accepeing as serverData and assinging the values to serverElements array.
+  // which is passing an event which accepting as serverData and assigning the values to serverElements array.
   onServerAdded(serverData: { serverName: string, serverContent: string }) {
     this.serverElements.push({
       type: 'server',

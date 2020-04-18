@@ -27,7 +27,12 @@
   send back to server-element component  
 -->
 <!-- 
-  in the first input, rather than sending data using two-way binding, simple local refrence is used to access data of input tag
+  in the first input, rather than sending data using two-way binding, simple local reference is used to access data of input tag
   same like (as accessing value of input in react with e.target.value)
   here we can use the value of this input in onAddedServer(e)=> e.value
+  we can simply access data inside the function argument like `<inputArg>.value`
  -->
+<!-- 
+  in the second input ( #serverContentInput ) data is sending via @viewChild (props) bi creating element reference ( #serverContentInput )  
+  where user need to access input value with @viewChild and create a `refElement` and access value with `<refElement>.nativeElement.value`
+-->

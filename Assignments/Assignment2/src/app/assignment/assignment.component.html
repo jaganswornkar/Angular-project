@@ -1,0 +1,6 @@
+<h1>assignment-2 works!</h1>
+
+<input type="text" [(ngModel)]="username">
+<button [disabled]="username === ''" (click)="username=''" >Reset User</button>
+
+<h2>{{ username }}</h2>

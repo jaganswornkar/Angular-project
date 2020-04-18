@@ -1,14 +1,14 @@
 <div class="container">
 <app-cockpit 
     (serverCreated)="onServerAdded($event)" 
-    (blueprintCreated)="onBlueprintAdded($event)"
+    (bpCreated)="onBlueprintAdded($event)"
     ></app-cockpit>
   <hr>
   <div class="row">
     <div class="col-xs-12">
       <button class="btn btn-primary" (click)="onChangeFirst()">Change first Element</button>
       <button class="btn btn-danger" (click)="onDestroyFirst()">Destroy first Component</button>
-      <app-server-element 
+      <app-server-element
         *ngFor="let serverElement of serverElements"
         [element]="serverElement"
         [name]="serverElement.name"
@@ -31,6 +31,6 @@
   -->
   <!-- 
     rather than sending data to child component and using that value with html, directly
-    you can create refrence HTML to that child component
+    you can create reference HTML (<p #contentParagraph>) to that child component
     *this is part of HOOKS*
    -->
